@@ -21,15 +21,19 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "center"
   },
   mainContent: {
-    position: "",
     padding: theme.spacing(9),
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(1),
+      paddingTop: theme.spacing(9)
+    }
   },
   mainDescription: {
     listStyleType: "none",
-    textAlign: "justify"
+    textAlign: "justify",
+    padding: 0
   },
   learnMoreBtn: {
-    marginTop: theme.spacing(6)
+    marginTop: theme.spacing(3)
   },
   mainDescriptionItem: {
     marginBottom: theme.spacing(1)
@@ -70,7 +74,7 @@ function App() {
               alignContent="center"
               style={{ minHeight: "100vh" }}
             >
-              <Grid item md={6}>
+              <Grid item md={6} sm={12}>
                 <div className={classes.mainContent}>
                   <Typography
                     variant="h2"
@@ -88,7 +92,7 @@ function App() {
                   <Button color="secondary" variant="contained" size="large" className={classes.learnMoreBtn}>Узнать больше</Button>
                 </div>
               </Grid>
-              <Grid item md={6}>
+              <Grid item md={6} sm={12}>
                 <div className={classes.mainContent}>
                   <ul className={classes.mainDescription}>
                     <li className={classes.mainDescriptionItem}><b>Okie Dokie!</b> – это отличный способ улучшить навыки говорения на английском
